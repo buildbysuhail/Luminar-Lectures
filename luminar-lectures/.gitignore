@@ -12,7 +12,7 @@ dist
 dist-ssr
 *.local
 
-json-server-demo/
+json-server-demo/node_modules
 
 # Editor directories and files
 .vscode/*

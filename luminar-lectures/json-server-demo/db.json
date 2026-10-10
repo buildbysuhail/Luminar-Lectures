@@ -1,0 +1,21 @@
+                {
+                "users": [
+                    {
+                    "id": "1",
+                    "name": "Suhail",
+                    "role": "Frontend Developer"
+                    },
+                    {
+                    "id": "2",
+                    "name": "Rahul",
+                    "role": "Backend Developer"
+                    }
+                ],
+                "tasks": [
+                    {
+                    "id": "1",
+                    "title": "Learn JSON Server",
+                    "completed": false
+                    }
+                ]
+                }

@@ -1,0 +1,13 @@
+1. Create a .env file
+
+In your project root:
+
+PORT=3001
+2. Install dotenv-cli
+npm install --save-dev dotenv-cli
+3. Update package.json
+"scripts": {
+  "start": "dotenv -- json-server db.json --port $PORT"
+}
+
+Note: The $PORT syntax is shell-dependent and may not work consistently in Windows PowerShell or Command Prompt.
