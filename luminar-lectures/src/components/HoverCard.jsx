@@ -1,6 +1,7 @@
 import "./HoverCard.css";
 
 export default function HoverCard({
+  key,
   title,
   description,
   label = "View lecture",
