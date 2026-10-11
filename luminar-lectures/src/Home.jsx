@@ -5,7 +5,7 @@ import { useState, useEffect, useCallback } from "react"
 import HoverCard from "./components/HoverCard";
 import { base_Url } from "./services/base_Url";
 import commonAPI from "./services/commonAPI";
-import { addLecture } from "./services/allAPIs";
+import { addLecture, getLectures } from "./services/allAPIs";
 
 function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -31,7 +31,13 @@ function Home() {
       console.log(data, "userssss");
     };
 
+    const getLecturesData = async () => {
+      const data = await getLectures();
+      console.log(data, "lectures");
+    }
+
     getUsers();
+    getLecturesData();
   }, []);
 
 
