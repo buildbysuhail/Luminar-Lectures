@@ -1,21 +1,30 @@
-                {
-                "users": [
-                    {
-                    "id": "1",
-                    "name": "Suhail",
-                    "role": "Frontend Developer"
-                    },
-                    {
-                    "id": "2",
-                    "name": "Rahul",
-                    "role": "Backend Developer"
-                    }
-                ],
-                "tasks": [
-                    {
-                    "id": "1",
-                    "title": "Learn JSON Server",
-                    "completed": false
-                    }
-                ]
-                }
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Suhail",
+      "role": "Frontend Developer"
+    },
+    {
+      "id": "2",
+      "name": "Rahul",
+      "role": "Backend Developer"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Learn JSON Server",
+      "completed": false
+    }
+  ],
+  "lectures": [
+    {
+      "title": "test title",
+      "description": "test descri",
+      "url": "test lecture",
+      "id": "v_8N3Bkdjvo"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
