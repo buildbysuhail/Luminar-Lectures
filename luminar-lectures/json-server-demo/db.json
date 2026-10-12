@@ -20,22 +20,16 @@
   ],
   "lectures": [
     {
-      "title": "test title",
-      "description": "test descri",
-      "url": "test lecture",
-      "id": "v_8N3Bkdjvo"
+      "title": "dwsdwe",
+      "description": "dqwdwq",
+      "url": "https://www.youtube.com/watch?v=dda1E_SkmJ0&pp=kggWbXZzLWFjcS15Y20tZGh1Yi13ZWIwYQ%3D%3D",
+      "id": "_UNfhEdRZHM"
     },
     {
-      "title": "klkj",
-      "description": "lorem ipsum gen",
-      "url": "https://youtu.be/1clWprLC5Ak?si=OZiAWVDHdjUFzhVb",
-      "id": "ONtJQEsjnPo"
-    },
-    {
-      "title": "",
-      "description": "sdd",
-      "url": "https://youtu.be/1clWprLC5Ak?si=OZiAWVDHdjUFzhVb",
-      "id": "uyTys9-0aKc"
+      "title": "fgdgere",
+      "description": "ghhgfg",
+      "url": "https://www.youtube.com/watch?v=sDOQpnOa810&t=504s",
+      "id": "0UAGfIyDC9c"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

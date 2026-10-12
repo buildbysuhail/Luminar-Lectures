@@ -5,8 +5,9 @@ import { useState, useEffect, useCallback } from "react"
 import HoverCard from "./components/HoverCard";
 import { base_Url } from "./services/base_Url";
 import commonAPI from "./services/commonAPI";
-import { addLecture, getLectures } from "./services/allAPIs";
+import { addLecture, getLectures, deleteLecture } from "./services/allAPIs";
 import { toast }  from "sonner";
+import { Trash } from "lucide-react"
 
 function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -16,6 +17,17 @@ function Home() {
     url: ""
   });
   const [lectures, setLectures] = useState([]);
+
+  const [isTrashOn, setIsTrashOn] = useState(false);
+  const [deleteModalOpen, setDeleteModalOpen] = useState(false);
+
+  const [selectedLectures, setSelectedLectures] = useState([]);
+
+  const toggleSelectLecture = (id) => {
+    setSelectedLectures((prev) =>
+      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
+    );
+  }
 
   const handleCloseModal = useCallback(() => {
     setIsModalOpen(false);
@@ -55,7 +67,26 @@ function Home() {
   }
 };
 
+const handleDeleteSelectedLectures = async () => {
+  const deletedIds = [];
 
+  for (const id of selectedLectures) {
+    const response = await deleteLecture(id);
+    if (response.status === 200) {
+      deletedIds.push(id);
+    }
+  }
+
+  setLectures((prev) => prev.filter((lecture) => !deletedIds.includes(lecture.id)));
+  setSelectedLectures((prev) => prev.filter((id) => !deletedIds.includes(id)));
+  setDeleteModalOpen(false);
+
+  if (deletedIds.length === selectedLectures.length) {
+    toast.success(`${deletedIds.length} lecture(s) deleted successfully`);
+  } else {
+    toast.error(`Deleted ${deletedIds.length} of ${selectedLectures.length} lectures`);
+  }
+};
 
   useEffect(() => {
     const getUsers = async () => {
@@ -101,21 +132,41 @@ function Home() {
       <p className="font-[ui-sans-serif]">Font Style</p> */}
 
       <div className="hc-grid">
-        <HoverCard description="Some description" />
+        {/* <HoverCard description="Testing Hover card" /> */}
 
         {/* <HoverCard
           title="React Hooks"
           description="useState, useEffect and custom hooks explained with examples."
           onClick={() => console.log("open lecture")}
         /> */}
-        {lectures.map((lecture) => (
-          <HoverCard
-            key={lecture.id}
-            title={lecture.title}
-            description={lecture.description}
-            onClick={()=>handleWatchLecture(lecture.url)}
-          />
-        ))}
+        {lectures?.map((lecture) => {
+          const isSelected = selectedLectures.includes(lecture.id);
+          return (
+            <div
+              key={lecture.id}
+              className={`relative rounded-xl transition-all duration-200 ${isTrashOn && isSelected ? "ring-2 ring-red-900" : ""
+                }`}
+            >
+              {isTrashOn && (
+                <input
+                  type="checkbox"
+                  checked={isSelected}
+                  onChange={() => toggleSelectLecture(lecture.id)}
+                  className="absolute top-2 right-2 z-10 h-5 w-5 cursor-pointer accent-red-500"
+                />
+              )}
+              <HoverCard
+                title={lecture.title}
+                description={lecture.description}
+                onClick={() =>
+                  isTrashOn
+                    ? toggleSelectLecture(lecture.id)
+                    : handleWatchLecture(lecture.url)
+                }
+              />
+            </div>
+          );
+        })}
       </div>
 
       {/* <Card
@@ -169,6 +220,44 @@ function Home() {
           >Submit</button>
         </div>
       </CommonModal>
+
+      <CommonModal
+        isOpen={deleteModalOpen}
+        onClose={() => setDeleteModalOpen(false)}
+        title="Delete Selected Lectures"
+        // isOpen={}
+        // onClose={() => setIsTrashOn(false)}
+      >
+        <p>Are you sure you want to delete the selected lectures?</p>
+        <div className="flex gap-4 mt-4 justify-center">
+          <button className="bg-red-800 text-white px-4 py-2 rounded-md hover:bg-red-700"
+            onClick={handleDeleteSelectedLectures}
+          >Confirm Delete</button>
+        </div>
+      </CommonModal>
+
+      <div className="fixed bottom-7 right-7 flex flex-between gap-5">
+
+        {
+          selectedLectures.length > 0 && (
+            <button
+              onClick={() => setDeleteModalOpen(true)}
+              className="px-2 py-4 bg-inherit cursor-pointer text-red-400 border border-red-800 rounded-sm">
+              Delete Selected ({selectedLectures.length})
+            </button>
+          )}
+
+        <Trash onClick={() => setIsTrashOn((prev) => {
+          !prev && setSelectedLectures([]); // Clear selected lectures when turning off trash mode
+          return !prev;
+        })}
+          className={`flex h-13 w-13 bg-inherit cursor-pointer transition-all duration-300 ${isTrashOn
+            ? "text-red-500 drop-shadow-[0_0_10px_rgba(239,68,68,0.95)]"
+            : "text-red-700"
+            }`}
+        />
+
+      </div>
 
     </div>
   )

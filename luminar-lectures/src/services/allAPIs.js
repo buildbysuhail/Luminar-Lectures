@@ -9,3 +9,7 @@ export const addLecture  = async (lectureData) => {
 export const getLectures = async () => {
     return await commonAPI("GET", `${base_Url}/lectures`);
 }
+
+export const deleteLecture = async (lectureId) => {
+    return await commonAPI("DELETE", `${base_Url}/lectures/${lectureId}`, {});
+}
