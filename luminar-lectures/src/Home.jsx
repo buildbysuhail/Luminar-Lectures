@@ -239,7 +239,7 @@ const handleDeleteSelectedLectures = async () => {
       <div className="fixed bottom-7 right-7 flex flex-between gap-5">
 
         {
-          selectedLectures.length > 0 && (
+          isTrashOn && selectedLectures.length > 0 && (
             <button
               onClick={() => setDeleteModalOpen(true)}
               className="px-2 py-4 bg-inherit cursor-pointer text-red-400 border border-red-800 rounded-sm">
