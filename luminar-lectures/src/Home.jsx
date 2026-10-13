@@ -41,8 +41,21 @@ function Home() {
     return;
   }
 
-  const response = await addLecture(lectureData);
-  console.log(response);
+  try {
+    const response = await addLecture(lectureData);
+
+    toast.success("Lecture added successfully!");
+    console.log(response);
+
+    setIsModalOpen(false);
+    setLectureData({ title: "", description: "", url: "" });
+
+    const data = await getLectures();
+    setLectures(data.data);
+  } catch (error) {
+    console.error(error);
+    toast.error("Failed to add lecture.");
+  }
 };
 
   const handleWatchLecture = (url) => {
