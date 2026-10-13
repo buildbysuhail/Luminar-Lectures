@@ -4,8 +4,8 @@
   max-width: 320px;
   aspect-ratio: 1 / 0.95;
   overflow: hidden;
-  border-radius: 20px;
-  background: linear-gradient(135deg, #4f46e5, #7c3aed 55%, #db2777);
+  border-radius: 11px;
+  background: linear-gradient(135deg, #4f46e5, #320480 55%, #021148);
   color: #ffffff;
   cursor: pointer;
   outline: none;

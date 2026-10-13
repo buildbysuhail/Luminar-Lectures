@@ -112,7 +112,11 @@ const handleDeleteSelectedLectures = async () => {
         <div className="w-3/5 flex flex-row justify-between">
           <h3 className="p-3 ms-7 text-xl lg:text-3xl font-[fangsong]">Welcome Suhail</h3>
 
-          <button className="text-black  font-semibold bg-blue-300 hover:bg-blue-400 hover:text-slate-800 px-2 py-1 rounded-md shadow-sm" onClick={() => setIsModalOpen(true)}>Open Modal</button>
+          <button 
+          className="text-slate-300 cursor-pointer font-semibold bg-blue-900 hover:bg-blue-800 hover:text-slate-100 px-2 py-1 rounded-md shadow-md transition-all duration-100 h-13"
+           onClick={() => setIsModalOpen(true)}>
+            𝙰𝚍𝚍 𝙻𝚎𝚌𝚝𝚞𝚛𝚎
+          </button>
 
         </div>
       </div>
@@ -139,7 +143,11 @@ const handleDeleteSelectedLectures = async () => {
           description="useState, useEffect and custom hooks explained with examples."
           onClick={() => console.log("open lecture")}
         /> */}
-        {lectures?.map((lecture) => {
+        {
+        lectures?.length === 0 ? (
+          <p className="text-center text-gray-500 w-full">No lectures available. Please add a new lecture.</p>
+        ) : (
+        lectures?.map((lecture) => {
           const isSelected = selectedLectures.includes(lecture.id);
           return (
             <div
@@ -166,7 +174,8 @@ const handleDeleteSelectedLectures = async () => {
               />
             </div>
           );
-        })}
+        })
+        )}
       </div>
 
       {/* <Card

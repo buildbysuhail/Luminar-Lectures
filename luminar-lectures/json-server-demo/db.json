@@ -20,16 +20,88 @@
   ],
   "lectures": [
     {
-      "title": "dwsdwe",
-      "description": "dqwdwq",
-      "url": "https://www.youtube.com/watch?v=dda1E_SkmJ0&pp=kggWbXZzLWFjcS15Y20tZGh1Yi13ZWIwYQ%3D%3D",
-      "id": "_UNfhEdRZHM"
+      "title": "Media Player Lecture 1(MP L1)",
+      "description": "Media Player Lecture 1, from 09/07/2024",
+      "url": "https://youtu.be/rsyxKnFFdGI",
+      "id": "3cg0LtUAVY0"
     },
     {
-      "title": "fgdgere",
-      "description": "ghhgfg",
-      "url": "https://www.youtube.com/watch?v=sDOQpnOa810&t=504s",
-      "id": "0UAGfIyDC9c"
+      "title": "MP: L2",
+      "description": "Media Player Lecture 2, from 10/07/2024",
+      "url": "https://youtu.be/Q69XiGspuNg",
+      "id": "povaIoIPhdc"
+    },
+    {
+      "title": "MP: L3",
+      "description": "Media Player Lecture 3, from 11/07/2024",
+      "url": "https://youtu.be/SjC60iC9xVE",
+      "id": "ViUGIX9EXag"
+    },
+    {
+      "title": "MP: L4",
+      "description": "Media Player Lecture 4, from 12/07/2024",
+      "url": "https://youtu.be/2Qwyq_wP4FU",
+      "id": "zuMjET-u86c"
+    },
+    {
+      "title": "MP: L5",
+      "description": "Media Player Lecture 5, from 13/07/2024",
+      "url": "https://youtu.be/TItj9Uu3rrc",
+      "id": "Vn559uOaqic"
+    },
+    {
+      "title": "MP: L6",
+      "description": "Media Player Lecture 6, from 15/07/2024",
+      "url": "https://youtu.be/184X1muzNp4",
+      "id": "EUGUh7XRsUU"
+    },
+    {
+      "title": "MP: L7",
+      "description": "Media Player Lecture 7, from 16/07/2024",
+      "url": "https://youtu.be/97rg53GM4zY",
+      "id": "iAhfsVXtbEk"
+    },
+    {
+      "title": "MP: L8",
+      "description": "Media Player Lecture 8, from 18/07/2024",
+      "url": "https://youtu.be/uho-7LxKgjo",
+      "id": "2SnqwXSvwV4"
+    },
+    {
+      "title": "MP: L9",
+      "description": "Media Player Lecture 9, from 20/07/2024",
+      "url": "https://youtu.be/JwuxlJIx3dE",
+      "id": "Psj33YiJtHM"
+    },
+    {
+      "title": "MP: L10",
+      "description": "Media Player Lecture 10, from 21/07/2024",
+      "url": "https://youtu.be/JwuxlJIx3dE",
+      "id": "lKVAI5f4NH4"
+    },
+    {
+      "title": "MP: 11",
+      "description": "",
+      "url": " https://youtu.be/c8Wo1137ztk",
+      "id": "gBx3rupZe-k"
+    },
+    {
+      "title": "MP: L12",
+      "description": "",
+      "url": " https://youtu.be/ad21gch6pAs",
+      "id": "ywmKOH72hYg"
+    },
+    {
+      "title": "MP: L13",
+      "description": "",
+      "url": " https://youtu.be/AS84nlfcEOw",
+      "id": "HV65tgK3IyE"
+    },
+    {
+      "title": "MP: L14",
+      "description": "",
+      "url": "https://youtu.be/rL04I_5queg",
+      "id": "obtQkbVfkPo"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
